@@ -24,19 +24,19 @@ Y = pd.DataFrame(boston.target, columns=["MEDV"])
 st.sidebar.header('Specify Input Parameters')
 
 def user_input_features():
-    CRIM = st.sidebar.slider('CRIM', float(X.CRIM.min()), float(X.CRIM.max()), float(X.CRIM.mean()))
-    ZN = st.sidebar.slider('ZN', float(X.ZN.min()), float(X.ZN.max()), float(X.ZN.mean()))
-    INDUS = st.sidebar.slider('INDUS', float(X.INDUS.min()), float(X.INDUS.max()), float(X.INDUS.mean()))
-    CHAS = st.sidebar.slider('CHAS', float(X.CHAS.min()), float(X.CHAS.max()), float(X.CHAS.mean()))
-    NOX = st.sidebar.slider('NOX', float(X.NOX.min()), float(X.NOX.max()), float(X.NOX.mean()))
-    RM = st.sidebar.slider('RM', float(X.RM.min()), float(X.RM.max()), float(X.RM.mean()))
-    AGE = st.sidebar.slider('AGE', float(X.AGE.min()), float(X.AGE.max()), float(X.AGE.mean()))
-    DIS = st.sidebar.slider('DIS', float(X.DIS.min()), float(X.DIS.max()), float(X.DIS.mean()))
-    RAD = st.sidebar.slider('RAD', float(X.RAD.min()), float(X.RAD.max()), float(X.RAD.mean()))
-    TAX = st.sidebar.slider('TAX', float(X.TAX.min()), float(X.TAX.max()), float(X.TAX.mean()))
-    PTRATIO = st.sidebar.slider('PTRATIO', float(X.PTRATIO.min()), float(X.PTRATIO.max()), float(X.PTRATIO.mean()))
-    B = st.sidebar.slider('B', float(X.B.min()), float(X.B.max()), float(X.B.mean()))
-    LSTAT = st.sidebar.slider('LSTAT', float(X.LSTAT.min()), float(X.LSTAT.max()), float(X.LSTAT.mean()))
+    CRIM = st.sidebar.slider('Quality', float(X.CRIM.min()), float(X.CRIM.max()), float(X.CRIM.mean()))
+    ZN = st.sidebar.slider('Size', float(X.ZN.min()), float(X.ZN.max()), float(X.ZN.mean()))
+    INDUS = st.sidebar.slider('Freshness', float(X.INDUS.min()), float(X.INDUS.max()), float(X.INDUS.mean()))
+    CHAS = st.sidebar.slider('Demand', float(X.CHAS.min()), float(X.CHAS.max()), float(X.CHAS.mean()))
+    NOX = st.sidebar.slider('Appearance', float(X.NOX.min()), float(X.NOX.max()), float(X.NOX.mean()))
+    RM = st.sidebar.slider('Maturity of the Produce', float(X.RM.min()), float(X.RM.max()), float(X.RM.mean()))
+    AGE = st.sidebar.slider('Temprature', float(X.AGE.min()), float(X.AGE.max()), float(X.AGE.mean()))
+    DIS = st.sidebar.slider('Ripeness', float(X.DIS.min()), float(X.DIS.max()), float(X.DIS.mean()))
+    RAD = st.sidebar.slider('Season', float(X.RAD.min()), float(X.RAD.max()), float(X.RAD.mean()))
+    TAX = st.sidebar.slider('Weight', float(X.TAX.min()), float(X.TAX.max()), float(X.TAX.mean()))
+    PTRATIO = st.sidebar.slider('Hygieny', float(X.PTRATIO.min()), float(X.PTRATIO.max()), float(X.PTRATIO.mean()))
+    B = st.sidebar.slider('Supply', float(X.B.min()), float(X.B.max()), float(X.B.mean()))
+    LSTAT = st.sidebar.slider('Average National Price', float(X.LSTAT.min()), float(X.LSTAT.max()), float(X.LSTAT.mean()))
     data = {'CRIM': CRIM,
             'ZN': ZN,
             'INDUS': INDUS,
@@ -58,9 +58,9 @@ df = user_input_features()
 # Main Panel
 
 # Print specified input parameters
-st.header('Specified Input parameters')
-st.write(df)
-st.write('---')
+#st.header('Specified Input parameters')
+#st.write(df)
+#st.write('---')
 
 # Build Regression Model
 model = RandomForestRegressor()
